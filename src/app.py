@@ -61,9 +61,17 @@ def update_graph(month, sentiment, subjectivity):
                           modebar={
                             'orientation': 'v',
                             'bgcolor': '#E9E9E9',
-                            'color': 'black',
-                            'activecolor': '#9ED3CD'
-                        }
+                            'color': '#9ED3CD',
+                            'activecolor': 'grey'},
+                            xaxis_title=None, 
+                            yaxis_title=None,
+                            #get rid of x ticks and y ticks
+                            xaxis = dict(
+                                showticklabels = False
+                            ),
+                            yaxis = dict(
+                                showticklabels = False
+                            )
             )
         return fig
     else:
@@ -79,5 +87,5 @@ def update_table(selectedData,page_current, page_size ):
     return []
 
 if __name__ == '__main__':
-    app.run_server(debug=False)
+    app.run_server(debug=True)
 
